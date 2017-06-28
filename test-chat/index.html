@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <meta charset="UTF-8">
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<style>
+    #container {
+        width: 95vw;
+        height: 95vh;
+    }
+    h5 {
+        margin-bottom: 0;
+    }
+    .chatContainer {
+        width: 80%;
+        height: 40%;
+        overflow-y: scroll;
+    }
+    .personalContainer {
+        width: 80%;
+        height: 10%;
+        overflow-y: scroll;
+    }
+    .nicksContainer {
+        width: 15%;
+        height: 70%;
+        position: absolute;
+        right: 10px;
+    }
+    #nicksContainer {
+        width: 100%;
+        height: 75%;
+        overflow-y: scroll;
+    }
+    .message {
+        width: 80%;
+        height: 10%;
+    }
+
+    #sendMessageToServer {
+        margin: 20px;
+    }
+    .message,
+    .chatContainer,
+    .personalContainer,
+    #nicksContainer {
+        border: solid 1px;
+    }
+</style>
+<body>
+<script>
+
+    var socket = io();
+
+    //Создаем элементы страницы-----------------------------------------------------------------------------------------
+    //Подготовим контейнер
+    function prepareContentBox() {
+
+        if ($('#container').length == 0) {
+            $('<div>', {
+                id: 'container',
+                class: 'container'
+            }).appendTo('body')
+        } else {
+            $('#container').children().remove()
+        }
+    }
+
+    //Подготовим регистрационную форму
+    function showRegistrationForm() {
+
+        prepareContentBox();
+
+        $('<div>', {
+            id: 'signup',
+            append: $('<input>', {
+                type: 'text',
+                id: 'nick'
+            })
+                .add($('<button>', {
+                    id: 'sendNickToServer',
+                    text: 'Send Nick'
+                }))
+        }).appendTo('#container');
+    }
+
+    //Подготовим страницу с чатом
+    function showChatPage() {
+
+        prepareContentBox();
+
+        $('<h4>', {
+            id: 'helloBox'
+        }).appendTo('#container');
+
+        $('<div>', {
+            class: 'nicksContainer',
+            append: $('<h5>', {
+                text: 'Сейчас в сети:'
+            })
+                .add($('<div>', {
+                    id: 'nicksContainer'
+                }))
+        }).appendTo('#container');
+
+        $('<h5>', {
+            text: 'Сообщения чата:'
+        }).appendTo('#container');
+
+        $('<div>', {
+            id: 'chatContainer',
+            class: 'chatContainer'
+        }).appendTo('#container');
+
+        $('<h5>', {
+            text: 'Персональные сообщения:'
+        }).appendTo('#container');
+
+        $('<div>', {
+            id: 'personalContainer',
+            class: 'personalContainer'
+        }).appendTo('#container');
+
+        $('<h5>', {
+            text: 'Введите новое сообщение:'
+        }).appendTo('#container');
+
+        $('<textarea>', {
+            id: 'message',
+            class: 'message',
+            type: 'text'
+        }).appendTo('#container');
+
+        $('<button>', {
+            id: 'sendMessageToServer',
+            text: 'Send'
+        }).appendTo('#container');
+
+    }
+    
+    //Привяжим события к созданым элементам DOMа------------------------------------------------------------------------
+    //Привяжем события к элементам регистрационной формы
+    function bindEventsForRegistrationForm() {
+        $("#sendNickToServer").on("click", sendNickToServer);
+    }
+
+    //Привяжем события к элементам страницы чата
+    function bindEventsForChatPage() {
+        $("#message").keypress(function (event) {
+            trackToWriting(event)
+        });
+        $("#sendMessageToServer").on("click", sendMessageToServer);
+        $("#nicksContainer").on('click', 'li', sendPersonalMessage);
+    }
+
+    //Обработчики событий на странице пользователя----------------------------------------------------------------------
+    //Передаем на серверный обработчик событий "saveNick" ник пользователя
+    function sendNickToServer() {
+        socket.emit("saveNick", { nick: $("#nick").val(), id : socket.id });
+//        showChatPage()
+    }
+
+    //Передаем на серверный обработчик событий "userIsWrite" id если пользователь печатает
+    var isWrite = false;
+    function trackToWriting(event) {
+        if (!isWrite) {
+            isWrite = true;
+            socket.emit("userIsWrite", { id : socket.id });
+            setTimeout(function () { isWrite = false }, 2400)
+        }
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            $("#sendMessageToServer").click();
+        }
+    }
+
+    //Передаем на серверный обработчик событий "sendToChat" набранное сообщение
+    function sendMessageToServer() {
+        socket.emit("sendToChat", { message: $("#message").val(), id : socket.id });
+        $("#message").val('');
+    }
+
+    //Передаем на серверный обработчик событий 'sendToPersonal' тело сообщения, id отправителя и получателя
+    function sendPersonalMessage() {
+        socket.emit('sendToPersonal', { message: $("#message").val(), id : socket.id , toId: $(this).attr('id')});
+        $("#message").val('');
+    }
+
+    //Привяжим события к запросам от сервера----------------------------------------------------------------------------
+    //обрабатываем событие 'sayHello'
+    socket.on('sayHello', function (data) {
+        showChatPage();             //отобразим страницу чата
+        bindEventsForChatPage();    //привяжем события к элементам
+        $("#helloBox").html(data);  //отобразим сообщение от сервера
+    });
+
+    //обрабатываем событие 'newUser'. Отображаем в чате ник нового участника
+    socket.on('newUser', function (data) {
+        var msg = '<li> К нам присоединился <b>' + data + '</b></li>';
+        $("#chatContainer").append(msg);
+    });
+
+    //обрабатываем событие "showNick". Отображаем список активных ников
+    socket.on("showNick", function (data) {
+        var nicks = '';
+
+        $.each(data, function (id, nick) {
+            nicks += '<li title="Кликните для отправки сообщения персонально" id="' + id + '">' + nick + '</li>';
+        });
+
+        $("#nicksContainer").html(nicks);
+    });
+
+    //обрабатываем событие "userIsWrite". Сообщаем, когда пользователь печатает
+    var theyWrite = [];
+    socket.on("userIsWrite", function (data) {
+        if (!theyWrite.includes(data)) theyWrite.push(data);
+        if ($("#chatContainer").children('#' + data).length == 0) {
+            $("#chatContainer").append("<p id='" + data + "'>... " + data + " печатает</p>");
+            $("#chatContainer").scrollTop(9999);
+            checkIsWrite(data);
+        }
+    });
+
+    function checkIsWrite(data) {
+        if (theyWrite.includes(data)) theyWrite.splice(theyWrite.indexOf(data),1);
+        setTimeout(function () {
+            if (!theyWrite.includes(data)) {
+                $("#chatContainer").children('#' + data).remove();
+            } else {
+                checkIsWrite(data)
+            }
+        }, 3000)
+    }
+
+    //обрабатываем событие "showToChat" и добавляем в ленту сообщений новое сообщение с ником отправителя
+    socket.on("showToChat", function (data) {
+        var msg = '<li><b>' + data.nick + '</b> : ' + data.message + '</li>';
+        $("#chatContainer").append(msg);
+        $("#chatContainer").scrollTop(9999);
+    });
+
+    //обрабатываем событие 'showToPersonal' и добавляем в ленту сообщений новое персональное сообщение
+    socket.on('showToPersonal', function (data) {
+        var msg = '<li><b>' + data.nick + '</b> : ' + data.message + '</li>';
+        $("#personalContainer").append(msg);
+        $("#personalContainer").scrollTop(9999);
+    });
+
+    socket.on('exitUser', function (data) {
+        var msg = '<li>Из чата вышел <b>' + data + '</b></li>';
+        $("#chatContainer").append(msg);
+    });
+
+    //Выведем регистрационную форму для начала работы-------------------------------------------------------------------
+    showRegistrationForm();
+    bindEventsForRegistrationForm();
+
+</script>
+</body>
+</html>

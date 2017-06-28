@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">BlackJack</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="/">MAIN</a></li>
+				<li><a href="/about">ABOUT</a></li>
+				<li class="btn btn-warning navbar-btn"><a href="/game">GAME</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<!--Отображаем для авторизированного пользователя profile, logout-->
+				<% if (auth == true) { %>
+					<li><a href="/profile"><span class="glyphicon glyphicon-user"></span>PROFILE</a></li>
+					<li><a href="/logout">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
+				<% } %>
+
+				<!--Отображаем для не авторизированного пользователя signup, login-->
+                <% if (auth == false) { %>
+					<li class="dropdown"><a id="menuSignup" class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>SIGNUP</a>
+						<!--style="display: none;" добавить в стили или скрипты-->
+						<div class="dropdown-menu">
+
+							<form action="/signup" method="post" id="formSignup" class="form container-fluid">
+								<div class="form-group has-feedback">
+									<label for="email">Email:</label>
+									<input type="text" class="form-control" name="email">
+								</div>
+								<div class="form-group">
+									<label for="password">Password:</label>
+									<input type="password" class="form-control" name="password">
+								</div>
+								<div class="form-group">
+									<label for="confirmPassword">Confirm password:</label>
+									<input type="password" class="form-control" name="confirmPassword">
+								</div>
+								<button type="submit" class="btn btn-block">Signup</button>
+							</form>
+
+							<hr>
+
+							<p>Already have an account? <a id="linkLogin" href="#">Login</a></p>
+						</div>
+					</li>
+					<li class="dropdown"><a id="menuLogin" class="dropdown-toggle" data-toggle="dropdown" href="#">LOGIN<span class="glyphicon glyphicon-log-in"></span></a>
+						<div class="dropdown-menu">
+
+							<form action="/login" method="post" id="formLogin" class="form container-fluid">
+								<div class="form-group">
+									<label for="email">Email:</label>
+									<input type="text" class="form-control" name="email">
+								</div>
+								<div class="form-group">
+									<label for="password">Password:</label>
+									<input type="password" class="form-control" name="password">
+								</div>
+								<button type="submit" class="btn btn-block">Login</button>
+							</form>
+
+							<hr>
+
+							<p>Need an account? <a id="linkSignup" href="#">Signup</a></p>
+						</div>
+					</li>
+					<% } %>
+			</ul>
+		</div>
+	</div>
+</nav>

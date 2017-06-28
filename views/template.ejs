@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blackjack</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="image/x-icon" rel="shortcut icon" href="/img/favicon.ico" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Marck+Script" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/game.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/validator.min.js"></script>
+	<script type="text/javascript" src="/js/library.js"></script>
+	<script type="text/javascript" src="/js/appValidations.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
+</head>
+<body id="myPage">
+
+	<% include partials/header %>
+
+	<!-- show any messages that come back with authentication and edit profile -->
+		<div id="templateMessage" class="col-sm-6 col-sm-offset-3">
+            <% if (message && message.length > 0) { %>
+			<div class="alert alert-danger">
+				<ul>
+					<% message.forEach(function (message) { %>
+						<li><%=message.msg || message%></li>
+					<% }); %>
+				</ul>
+			</div>
+            <% } %>
+		</div>
+
+
+	<!--<h1>Content</h1>-->
+
+	<% if (page == "main") { %>
+		<% include pages/main %>
+	<% } %>
+
+    <% if (page == "about") { %>
+    <% include pages/about %>
+    <% } %>
+
+    <% if (page == "game") { %>
+    <% include pages/game %>
+    <% } %>
+
+    <% if (page == "login") { %>
+		<% include pages/login %>
+	<% } %>
+
+    <% if (page == "signup") { %>
+    <% include pages/signup %>
+    <% } %>
+
+    <% if (page == "profile") { %>
+    <% include pages/profile %>
+    <% } %>
+
+    <% if (page == "404") { %>
+		<% include pages/404 %>
+	<% } %>
+
+	<% if (page == "500") { %>
+		<% include pages/500 %>
+	<% } %>
+
+	<% include partials/footer %>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    padding-top:10px;
+    word-wrap:break-word;
+    background-image: url("/img/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    /*padding: 40px 60px;*/
+    padding: 30px 30px;
+    background-color: #cecac0;
+    opacity: 0.95;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: justify;
+    clear: both;
+}
+
+#templateMessage{
+    margin-top: 60px;
+}
+
+.container h3, .container dt, .navbar, footer {
+    font-family: 'Lobster', cursive;
+}
+/* Add a dark background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 13px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+.navbar-brand {
+    font-family: 'Marck Script', cursive;
+    font-size: 35px;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+.navbar li.btn a {
+    padding: 0 10px;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+.dropdown-menu {
+    font-family: Arial;
+    letter-spacing: normal;
+    min-width: 250px;
+}
+
+img.profileAvatar {
+    width: 150px;
+}
+
+footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 5px;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}

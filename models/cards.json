@@ -1,0 +1,314 @@
+[
+  {
+    "nominal": 2,
+    "suit": "tr",
+    "point": 2,
+    "class": "tr2"
+  },
+  {
+    "nominal": 3,
+    "suit": "tr",
+    "point": 3,
+    "class": "tr3"
+  },
+  {
+    "nominal": 4,
+    "suit": "tr",
+    "point": 4,
+    "class": "tr4"
+  },
+  {
+    "nominal": 5,
+    "suit": "tr",
+    "point": 5,
+    "class": "tr5"
+  },
+  {
+    "nominal": 6,
+    "suit": "tr",
+    "point": 6,
+    "class": "tr6"
+  },
+  {
+    "nominal": 7,
+    "suit": "tr",
+    "point": 7,
+    "class": "tr7"
+  },
+  {
+    "nominal": 8,
+    "suit": "tr",
+    "point": 8,
+    "class": "tr8"
+  },
+  {
+    "nominal": 9,
+    "suit": "tr",
+    "point": 9,
+    "class": "tr9"
+  },
+  {
+    "nominal": 10,
+    "suit": "tr",
+    "point": 10,
+    "class": "tr10"
+  },
+  {
+    "nominal": "J",
+    "suit": "tr",
+    "point": 10,
+    "class": "trJ"
+  },
+  {
+    "nominal": "Q",
+    "suit": "tr",
+    "point": 10,
+    "class": "trQ"
+  },
+  {
+    "nominal": "K",
+    "suit": "tr",
+    "point": 10,
+    "class": "trK"
+  },
+  {
+    "nominal": "T",
+    "suit": "tr",
+    "point": 11,
+    "class": "trT"
+  },
+  {
+    "nominal": 2,
+    "suit": "bub",
+    "point": 2,
+    "class": "bub2"
+  },
+  {
+    "nominal": 3,
+    "suit": "bub",
+    "point": 3,
+    "class": "bub3"
+  },
+  {
+    "nominal": 4,
+    "suit": "bub",
+    "point": 4,
+    "class": "bub4"
+  },
+  {
+    "nominal": 5,
+    "suit": "bub",
+    "point": 5,
+    "class": "bub5"
+  },
+  {
+    "nominal": 6,
+    "suit": "bub",
+    "point": 6,
+    "class": "bub6"
+  },
+  {
+    "nominal": 7,
+    "suit": "bub",
+    "point": 7,
+    "class": "bub7"
+  },
+  {
+    "nominal": 8,
+    "suit": "bub",
+    "point": 8,
+    "class": "bub8"
+  },
+  {
+    "nominal": 9,
+    "suit": "bub",
+    "point": 9,
+    "class": "bub9"
+  },
+  {
+    "nominal": 10,
+    "suit": "bub",
+    "point": 10,
+    "class": "bub10"
+  },
+  {
+    "nominal": "J",
+    "suit": "bub",
+    "point": 10,
+    "class": "bubJ"
+  },
+  {
+    "nominal": "Q",
+    "suit": "bub",
+    "point": 10,
+    "class": "bubQ"
+  },
+  {
+    "nominal": "K",
+    "suit": "bub",
+    "point": 10,
+    "class": "bubK"
+  },
+  {
+    "nominal": "T",
+    "suit": "bub",
+    "point": 11,
+    "class": "bubT"
+  },
+  {
+    "nominal": 2,
+    "suit": "ch",
+    "point": 2,
+    "class": "ch2"
+  },
+  {
+    "nominal": 3,
+    "suit": "ch",
+    "point": 3,
+    "class": "ch3"
+  },
+  {
+    "nominal": 4,
+    "suit": "tr",
+    "point": 4,
+    "class": "ch4"
+  },
+  {
+    "nominal": 5,
+    "suit": "ch",
+    "point": 5,
+    "class": "ch5"
+  },
+  {
+    "nominal": 6,
+    "suit": "ch",
+    "point": 6,
+    "class": "ch6"
+  },
+  {
+    "nominal": 7,
+    "suit": "ch",
+    "point": 7,
+    "class": "ch7"
+  },
+  {
+    "nominal": 8,
+    "suit": "ch",
+    "point": 8,
+    "class": "ch8"
+  },
+  {
+    "nominal": 9,
+    "suit": "ch",
+    "point": 9,
+    "class": "ch9"
+  },
+  {
+    "nominal": 10,
+    "suit": "ch",
+    "point": 10,
+    "class": "ch10"
+  },
+  {
+    "nominal": "J",
+    "suit": "ch",
+    "point": 10,
+    "class": "chJ"
+  },
+  {
+    "nominal": "Q",
+    "suit": "ch",
+    "point": 10,
+    "class": "chQ"
+  },
+  {
+    "nominal": "K",
+    "suit": "ch",
+    "point": 10,
+    "class": "chK"
+  },
+  {
+    "nominal": "T",
+    "suit": "ch",
+    "point": 11,
+    "class": "chT"
+  },
+  {
+    "nominal": 2,
+    "suit": "bub",
+    "point": 2,
+    "class": "bub2"
+  },
+  {
+    "nominal": 3,
+    "suit": "pik",
+    "point": 3,
+    "class": "pik3"
+  },
+  {
+    "nominal": 4,
+    "suit": "pik",
+    "point": 4,
+    "class": "pik4"
+  },
+  {
+    "nominal": 5,
+    "suit": "pik",
+    "point": 5,
+    "class": "pik5"
+  },
+  {
+    "nominal": 6,
+    "suit": "pik",
+    "point": 6,
+    "class": "pik6"
+  },
+  {
+    "nominal": 7,
+    "suit": "pik",
+    "point": 7,
+    "class": "pik7"
+  },
+  {
+    "nominal": 8,
+    "suit": "pik",
+    "point": 8,
+    "class": "pik8"
+  },
+  {
+    "nominal": 9,
+    "suit": "pik",
+    "point": 9,
+    "class": "pik9"
+  },
+  {
+    "nominal": 10,
+    "suit": "pik",
+    "point": 10,
+    "class": "pik10"
+  },
+  {
+    "nominal": "J",
+    "suit": "pik",
+    "point": 10,
+    "class": "pikJ"
+  },
+  {
+    "nominal": "Q",
+    "suit": "pik",
+    "point": 10,
+    "class": "pikQ"
+  },
+  {
+    "nominal": "K",
+    "suit": "pik",
+    "point": 10,
+    "class": "pikK"
+  },
+  {
+    "nominal": "T",
+    "suit": "pik",
+    "point": 11,
+    "class": "pikT"
+  }
+]

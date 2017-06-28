@@ -1,0 +1,70 @@
+<div class="container">
+
+	<div class="col-sm-3">
+		<%if (user.local.avatarFile) { %>
+		<img class="profileAvatar" src="<%=user.local.avatarFile%>" alt="">
+		<% } %>
+	</div>
+	<div class="col-sm-6">
+		<form id="formProfile" class="profileForm form-horizontal" action="http://localhost:8080/editProfile" method="post" ref='uploadForm' encType="multipart/form-data">
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="fName">FName :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" <% if (user.local.fName) {%>value="<%=user.local.fName%>"<%}%> placeholder="fname" name="fName">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="lName">LName :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" <% if (user.local.lName) {%>value="<%=user.local.lName%>"<%}%> placeholder="lname" name="lName">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="email">Email address :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" value="<%= user.local.email %>" name="email">
+				</div>
+			</div>
+			<a class="col-sm-8 col-sm-offset-4" href="#more" data-toggle="collapse">more information <span class="caret"></span></a><hr><hr>
+			<div id="more" class="collapse">
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="avatarFile">Add avatar :</label>
+					<div class="col-sm-8">
+						<input type="file" name="avatarFile">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="passwd">Change password :</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control" value="" placeholder="new passwd" name="password">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="confirmPasswd">Confirm password :</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control" value="" placeholder="confirm passwd" name="confirmPassword">
+					</div>
+				</div>
+
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-8">
+					<input type="submit" class="btn btn-warning btn-lg" name="profile" value="save change">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-sm-3">
+		<div class="form-group">
+			<label>Доступный баланс :
+				<span id="userBalance"><%= user.local.balance %></span>
+			</label>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2">
+				<input id="topUpBalance" type="submit" class="btn btn-warning" value="Пополнить на 1000">
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/profile.js"></script>

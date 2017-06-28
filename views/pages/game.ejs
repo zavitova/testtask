@@ -1,0 +1,116 @@
+<div class="container">
+
+    <div id="messageBoxForGame"></div>
+
+    <div class="lobby">
+
+        <button id="createNewTable" class="btn btn-primary btn-lg" type="button">Новый стол</button>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">Доступные столы</div>
+            <div id="tablesContainer" class="panel-body">тут будут столы</div>
+        </div>
+    </div>
+
+    <div class="game row">
+        <div class="gameTable col-sm-9">
+
+            <button id="startGame" class="btn btn-primary btn-lg" type="button">Начать игру</button>
+            <button title="Выйти из игры" t id="quitGame" class="btn btn-primary btn-lg" type="button"><span class="glyphicon glyphicon-log-out"></span></button>
+            <div id="messageBox"></div>
+
+            <table class="table">
+                <tbody>
+                    <tr class="success">
+                        <td>Баланс : </td>
+                        <td id="playerBalance">0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="player-1" class="player">
+                <div class="bet">Ставка : <span></span></div>
+                <div class="points">Очки : <span></span></div>
+                <div class="hand"></div>
+                <div class="playerInfo">
+                    <div class="avatar">
+                        <img src="" alt="">
+                    </div>
+                    <div class="name"></div>
+                </div>
+            </div>
+
+            <div id="player-2" class="player">
+                <div class="bet">Ставка : <span></span></div>
+                <div class="points">Очки : <span></span></div>
+                <div class="hand"></div>
+                <div class="playerInfo">
+                    <div class="avatar">
+                        <img src="" alt="">
+                    </div>
+                    <div class="name"></div>
+                </div>
+            </div>
+
+            <div id="player-3" class="player">
+                <div class="bet">Ставка : <span></span></div>
+                <div class="points">Очки : <span></span></div>
+                <div class="hand"></div>
+                <div class="playerInfo">
+                    <div class="avatar">
+                        <img src="" alt="">
+                    </div>
+                    <div class="name"></div>
+                </div>
+            </div>
+
+            <div id="player-4" class="player">
+                <div class="bet">Ставка : <span></span></div>
+                <div class="points">Очки : <span></span></div>
+                <div class="hand"></div>
+                <div class="playerInfo">
+                    <div class="avatar">
+                        <img src="" alt="">
+                    </div>
+                    <div class="name"></div>
+                </div>
+            </div>
+
+            <div id="player-5" class="player">
+                <div class="bet">Ставка : <span></span></div>
+                <div class="points">Очки : <span></span></div>
+                <div class="hand"></div>
+                <div class="playerInfo">
+                    <div class="avatar">
+                        <img src="" alt="">
+                    </div>
+                    <div class="name"></div>
+                </div>
+            </div>
+
+            <div id="croupier">
+                <div class="avatar">
+                    <img src="/img/dealer.png" alt="">
+                </div>
+                <div class="points">Очки : <span></span></div>
+                <div class="hand"></div>
+            </div>
+
+            <div id="chip-container" class="chip-container">
+                <img class="chip" id="chip-5" src="/img/chips/5.png" alt="bet 5">
+                <img class="chip" id="chip-25" src="/img/chips/25.png" alt="bet 25">
+                <img class="chip" id="chip-100" src="/img/chips/100.png" alt="bet 100">
+                <img class="chip" id="chip-500" src="/img/chips/500.png" alt="bet 500">
+            </div>
+            <div id="dialog" class="dialog">
+                <button id="getCard" class="btn btn-primary btn-lg" type="button">Взять карту</button>
+                <button id="stand" class="btn btn-primary btn-lg" type="button">Пасс</button>
+            </div>
+        </div>
+        <div id="chat" class="chat col-sm-3">
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/js/game.js"></script>
+<script type="text/javascript" src="/js/gameChat.js"></script>

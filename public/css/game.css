@@ -1,0 +1,408 @@
+#startGame {
+    display: none;
+}
+
+.card {
+    background-image: url("/img/cards.png");
+    height: 123px;
+    width: 79px;
+    background-position-x: 0;
+    background-position-y: -492px;
+    position: absolute;
+}
+.tr2 {
+    background-position-x: -79px;
+    background-position-y: 0;
+}
+.tr3 {
+     background-position-x: -158px;
+     background-position-y: 0;
+}
+.tr4 {
+    background-position-x: -237px;
+    background-position-y: 0;
+}
+.tr5 {
+    background-position-x: -316px;
+    background-position-y: 0;
+}
+.tr6 {
+    background-position-x: -395px;
+    background-position-y: 0;
+}
+.tr7 {
+    background-position-x: -474px;
+    background-position-y: 0;
+}
+.tr8 {
+    background-position-x: -553px;
+    background-position-y: 0;
+}
+.tr9 {
+    background-position-x: -632px;
+    background-position-y: 0;
+}
+.tr10 {
+    background-position-x: -711px;
+    background-position-y: 0;
+}
+.trJ {
+    background-position-x: -790px;
+    background-position-y: 0;
+}
+.trQ {
+    background-position-x: -869px;
+    background-position-y: 0;
+}
+.trK {
+    background-position-x: -948px;
+    background-position-y: 0;
+}
+.trT {
+    background-position-x: 0;
+    background-position-y: 0;
+}
+.bub2 {
+    background-position-x: -79px;
+    background-position-y: -123px;
+}
+.bub3 {
+    background-position-x: -158px;
+    background-position-y: -123px;
+}
+.bub4 {
+    background-position-x: -237px;
+    background-position-y: -123px;
+}
+.bub5 {
+    background-position-x: -316px;
+    background-position-y: -123px;
+}
+.bub6 {
+    background-position-x: -395px;
+    background-position-y: -123px;
+}
+.bub7 {
+    background-position-x: -474px;
+    background-position-y: -123px;
+}
+.bub8 {
+    background-position-x: -553px;
+    background-position-y: -123px;
+}
+.bub9 {
+    background-position-x: -632px;
+    background-position-y: -123px;
+}
+.bub10 {
+    background-position-x: -711px;
+    background-position-y: -123px;
+}
+.bubJ {
+    background-position-x: -790px;
+    background-position-y: -123px;
+}
+.bubQ {
+    background-position-x: -869px;
+    background-position-y: -123px;
+}
+.bubK {
+    background-position-x: -948px;
+    background-position-y: -123px;
+}
+.bubT {
+    background-position-x: 0;
+    background-position-y: -123px;
+}
+.ch2 {
+    background-position-x: -79px;
+    background-position-y: -246px;
+}
+.ch3 {
+    background-position-x: -158px;
+    background-position-y: -246px;
+}
+.ch4 {
+    background-position-x: -237px;
+    background-position-y: -246px;
+}
+.ch5 {
+    background-position-x: -316px;
+    background-position-y: -246px;
+}
+.ch6 {
+    background-position-x: -395px;
+    background-position-y: -246px;
+}
+.ch7 {
+    background-position-x: -474px;
+    background-position-y: -246px;
+}
+.ch8 {
+    background-position-x: -553px;
+    background-position-y: -246px;
+}
+.ch9 {
+    background-position-x: -632px;
+    background-position-y: -246px;
+}
+.ch10 {
+    background-position-x: -711px;
+    background-position-y: -246px;
+}
+.chJ {
+    background-position-x: -790px;
+    background-position-y: -246px;
+}
+.chQ {
+    background-position-x: -869px;
+    background-position-y: -246px;
+}
+.chK {
+    background-position-x: -948px;
+    background-position-y: -246px;
+}
+.chT {
+    background-position-x: 0;
+    background-position-y: -246px;
+}
+.pik2 {
+    background-position-x: -79px;
+    background-position-y: -369px;
+}
+.pik3 {
+    background-position-x: -158px;
+    background-position-y: -369px;
+}
+.pik4 {
+    background-position-x: -237px;
+    background-position-y: -369px;
+}
+.pik5 {
+    background-position-x: -316px;
+    background-position-y: -369px;
+}
+.pik6 {
+    background-position-x: -395px;
+    background-position-y: -369px;
+}
+.pik7 {
+    background-position-x: -474px;
+    background-position-y: -369px;
+}
+.pik8 {
+    background-position-x: -553px;
+    background-position-y: -369px;
+}
+.pik9 {
+    background-position-x: -632px;
+    background-position-y: -369px;
+}
+.pik10 {
+    background-position-x: -711px;
+    background-position-y: -369px;
+}
+.pikJ {
+    background-position-x: -790px;
+    background-position-y: -369px;
+}
+.pikQ {
+    background-position-x: -869px;
+    background-position-y: -369px;
+}
+.pikK {
+    background-position-x: -948px;
+    background-position-y: -369px;
+}
+.pikT {
+    background-position-x: 0;
+    background-position-y: -369px;
+}
+
+.game {
+}
+
+.gameTable {
+    background-image: url("/img/bj-table.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: white;
+    width: 800px;
+    height: 504px;
+}
+.chat {
+    min-width: 340px;
+}
+
+#quitGame {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#startGame {
+    position: absolute;
+    top: 20px;
+    left: 41%;
+}
+
+.player,
+#croupier  {
+    width: 20%;
+}
+
+.bet,
+.points {
+    padding-left: 20px;
+}
+
+.hand {
+    position: relative;
+    height: 130px;
+}
+.playerInfo {
+    text-align: center;
+}
+
+
+#player-1 {
+    position: absolute;
+    top: 27%;
+    left: 0;
+}
+
+#player-2 {
+    position: absolute;
+    top: 42%;
+    left: 20%;
+}
+
+#player-3 {
+    position: absolute;
+    top: 46%;
+    left: 40%;
+}
+
+#player-4 {
+    position: absolute;
+    top: 42%;
+    left: 60%;
+}
+
+#player-5 {
+    position: absolute;
+    top: 27%;
+    left: 80%;
+}
+#croupier {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+
+.avatar img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#croupier .avatar,
+#croupier .points {
+    display: inline-block;
+}
+
+.chip-container {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.chip {
+    height: 60px;
+    width:60px;
+    border-radius: 50%;
+}
+
+#chip-5:hover,
+#chip-25:hover,
+#chip-100:hover,
+#chip-500:hover,
+.activePlayer {
+    cursor: pointer;
+    box-shadow: 0 0 10px white;
+    -webkit-box-shadow: 0 0 10px white;
+    -moz-box-shadow: 0 0 10px white;
+    filter: progid:DXImageTransform.Microsoft.dropshadow(offX=10, offY=10, color=#FFFFFF);
+}
+.table {
+    color: black;
+    width: auto;
+    position: absolute;
+    top:20px;
+    left: 20px;
+}
+
+.dialog {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 310px;
+    height: 60px;
+}
+
+#messageBox {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    z-index: 10;
+}
+
+/*-----chat-----*/
+
+#chatBox {
+    height: 504px;
+    overflow-y: scroll;
+}
+h5 {
+    margin-bottom: 0;
+}
+#chatBox .chatContainer {
+    height: 10vh;
+    overflow-y: scroll;
+    border-bottom: none;
+}
+
+#chatBox #tableChat .chatContainer {
+    height: 20vh;
+}
+.personalContainer {
+    height: 10%;
+    overflow-y: scroll;
+}
+.nicksContainer {
+}
+
+.nicksContainer span {
+    cursor: pointer;
+}
+#nicksContainer {
+}
+#chatBox .message {
+    border: none;
+}
+
+#chatBox .input-group-btn button,
+#chatBox .message {
+    height: 50px;
+}
+
+#chatBox .sendMessageToServer {
+}
+.message,
+.chatContainer,
+.personalContainer,
+#nicksContainer,
+.input-group {
+    border: solid 2px;
+}
+/*-----------------*/
